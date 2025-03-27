@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahabat Super Snack</title>
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px);
+      }
+
+      .modal img {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 70px;
+        animation: lightbox 0.3s ease-in-out;
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        font-weight: 100;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+        scale: 3;
+      }
+
+      .close:hover {
+        transform: scale(1.2);
+        color: #b9b9b9;
+      }
+
+      @keyframes lightbox {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes bgmodal {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+          filter: blur(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+          filter: blur(0px);
+        }
+      }
+    </style>
+    <style>
+      @keyframes appear {
+        from {
+          opacity: 0;
+          scale: 0.2;
+        }
+        to {
+          opacity: 1;
+          scale: 1;
+        }
+      }
+
+      @keyframes nggeser {
+        from {
+          opacity: 0;
+          transform: translateX(-300px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+
+      .photo {
+        animation: nggeser linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+      }
+
+      .about .about-tittle,
+      .about .about-img,
+      .about .content h3,
+      .about .content p,
+      .menu .menu-tittle,
+      .menu .menu-tittle p,
+      .contact .contact-tittle,
+      .contact .contact-tittle p,
+      .contact .banner .link,
+      .menu .row .menu-card {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+      }
+    </style>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FEATHER ICONS -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- MY STYLE-->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+      <a href="https://www.instagram.com/sahabat_superr/" class="navbar-logo">
+        <img src="pojok-kiri.png" alt="Logo atas" class="Logoss" />
+      </a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Product</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- NAVBAR END -->
+
+    <!-- HERO SELECTION START -->
+    <section class="hero" id="home">
+      <div class="content">
+        <div class="judul1">
+          <h1>Sahabat</h1>
+        </div>
+        <div class="judul2">
+          <h1>Super!</h1>
+        </div>
+        <div class="p-con">
+          <p class="katas">Cemilan Renyah & Gurih untuk Segala Suasana!</p>
+        </div>
+        <a href="https://www.instagram.com/sahabat_superr/" class="cta"
+          >Try Now!</a
+        >
+      </div>
+
+      <!-- <div class="circle-glow">
+        <div class="buletan"></div>
+      </div>  -->
+      <!-- <div class="qris"> 
+        <img src="img/qris.jpg" alt="qris" />
+        <div class="deskripsi">QRIS</div>
+      </div> -->
+    </section>
+
+    <!-- HERO SELECTION END -->
+
+    <section id="photo" class="photo">
+      <div class="slider-con">
+        <ul class="slider">
+          <li>
+            <span
+              ><img
+                src="img/sample2.jpg"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="img/makaroni feed 1.jpg"
+                alt="Klik untuk perbesar"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="img/sample2.jpg"
+                alt="Klik untuk perbesar"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="img/basreng feed 1.jpg"
+                alt="Klik untuk perbesar"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="img/basrengbungkus.jpg"
+                alt="Klik untuk perbesar"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+
+          <!-- <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+          <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+          <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+          <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+          <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+        --></ul>
+        <ul class="slider" aria-hidden="true">
+          <li>
+            <span
+              ><img
+                src="img/sample2.jpg"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="img/sample3.jpg"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="img/sample2.jpg"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="img/sample3.jpg"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="img/sample2.jpg"
+                alt="Klik untuk perbesar"
+                style="cursor: pointer"
+                onclick="openModal(this)"
+            /></span>
+          </li>
+
+          <!-- <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+          <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+          <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+          <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+          <li>
+            <span><img src="img/sample2.jpg" alt=""></span>
+          </li>
+        --></ul>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION START -->
+    <section id="about" class="about">
+      <div class="about-bg">
+        <div class="about-tittle">
+          <h2>ABOUT US</h2>
+        </div>
+
+        <div class="row">
+          <div class="about-img">
+            <video controls>
+              <source src="img/sahabat super.mp4" type="video/mp4" />
+              Browser kamu tidak mendukung video tag.
+            </video>
+          </div>
+
+          <div class="content">
+            <h3>KENAPA MEMILIH SNACK KAMI?</h3>
+            <p>
+              Basreng kami dibuat dari bahan berkualitas dengan bumbu pedas yang
+              menggugah selera. Ditambah aroma segar daun jeruk, setiap gigitan
+              memberikan sensasi renyah yang khas dan cita rasa yang bikin
+              ketagihan. Cocok untuk pecinta makanan pedas dan camilan gurih!
+            </p>
+            <p>
+              Makaroni kriuk kami memiliki tekstur yang renyah dan bumbu yang
+              meresap sempurna. Diproses dengan teknik khusus untuk menghasilkan
+              kerenyahan maksimal, varian ini tersedia dalam berbagai level
+              kepedasan yang bisa disesuaikan dengan selera kamu. Camilan pas
+              untuk menemani waktu santai!
+            </p>
+            <p>
+              Untuk pecinta manis, fudgy brownies kami menghadirkan perpaduan
+              sempurna antara kelembutan dan rasa cokelat yang intens. Dibuat
+              dengan cokelat premium, setiap potongannya lumer di mulut dengan
+              tekstur yang moist dan chewy. Cocok dinikmati kapan saja, baik
+              untuk menemani kopi atau sebagai hidangan penutup spesial.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION END -->
+
+    <!-- MENU SECTION START-->
+    <section id="menu" class="menu">
+      <div class="menu-tittle"><h2>OUR MENU</h2></div>
+      <p>
+        Nikmati berbagai varian Basreng dengan rasa yang menggugah selera! Kami
+        menyediakan pilihan pedas, original, dan varian spesial yang siap
+        menemani harimu.
+      </p>
+
+      <div class="row">
+        <div class="menu-card">
+          <img src="img/imgforabt.jpg" alt="Basreng" class="menu-card-img" />
+          <h3 class="menu-card-tittle">BASRENG</h3>
+          <p class="price">IDR 5K/50gr</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/sample3.jpg" alt="Basreng" class="menu-card-img" />
+          <h3 class="menu-card-tittle">MAKARONI</h3>
+          <p class="price">IDR 2K/25gr</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/browniesfoto.jpg" alt="Basreng" class="menu-card-img" />
+          <h3 class="menu-card-tittle">BROWNIES</h3>
+          <p class="price">IDR 5K</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU SECTION END-->
+
+    <!-- CONTACT SECTION START-->
+    <section id="contact" class="contact">
+      <div class="contact-tittle">
+        <h2>CONTACT</h2>
+      </div>
+      <p>
+        Punya pertanyaan atau ingin pesan langsung? Hubungi kami melalui
+        Instagram atau temui kami di sekolah! Kami siap melayani dengan cepat
+        dan ramah.
+      </p>
+      <div class="running-text">
+        <ul>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+
+          <!-- <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li> -->
+        </ul>
+
+        <ul>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <!-- <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li> -->
+        </ul>
+      </div>
+      <div class="banner">
+        <h3 class="text-banner"></h3>
+        <div class="link">
+          <a href="https://www.instagram.com/sahabat_superr/" class="btn"
+            >Click Here!</a
+          >
+        </div>
+      </div>
+      <div class="running-text">
+        <ul>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+
+          <!-- <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li> -->
+        </ul>
+
+        <ul aria-hidden="true">
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <!-- <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li>
+          <li>
+            <span class="our">OUR INSTAGRAM</span>
+          </li>
+          <li>
+            <span class="instagram">@sahabat_superr</span>
+          </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION END-->
+
+    <!-- FOOTER SECTION START -->
+    <footer>
+      <div class="social">
+        <a href="https://www.instagram.com/sahabat_superr/"
+          ><i data-feather="instagram"></i
+        ></a>
+      </div>
+
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Product</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="credit">
+        <p>
+          Created by <a href="https://www.instagram.com/areznz/">Areznz </a> |
+          &copy; 2025.
+        </p>
+      </div>
+    </footer>
+    <!-- FOOTER SECTION END -->
+
+    <div id="lightboxModal" class="modal" onclick="closeModal()">
+      <span class="close">&times;</span>
+      <img id="modalImg" />
+    </div>
+
+    <!-- LIGHTBOXMODAL-->
+    <script>
+      function openModal(imgElement) {
+        let modal = document.getElementById("lightboxModal");
+        let modalImg = document.getElementById("modalImg");
+
+        modal.style.display = "flex";
+        modalImg.src = imgElement.src;
+      }
+
+      function closeModal() {
+        document.getElementById("lightboxModal").style.display = "none";
+      }
+    </script>
+
+    <!-- FEATHER ICONS -->
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- MY JAVASCIPT-->
+    <script src="js/script.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
+        }
+      }
+    </script>
+  </body>
+</html>
