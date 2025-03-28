@@ -956,42 +956,42 @@ footer .credit a {
   }
 
   .hero .content .judul1 h1 {
-    font-size: 16vw;
+    font-size: 13vw;
     font-family: "Archivo black", sans-serif;
     color: #1c3b2e;
   }
 
   .hero .content .judul2 h1 {
-    font-size: 17vw;
+    font-size: 12vw;
     font-family: "Archivo black", sans-serif;
     color: #1c3b2e;
   }
 
   .hero .content .judul1 {
-    margin-left: 0;
+    margin-left: 6rem;
     animation: slidingR linear;
     animation-timeline: view();
   }
 
   .hero .content .judul2 {
-    margin-left: 45vw;
+    margin-left: 12.6rem;
     animation: slidingL linear;
     animation-timeline: view();
   }
 
   @keyframes slidingR {
     from {
-      transform: translateX(-110px);
+      transform: translateX(-320px);
     }
 
     to {
-      transform: translateX(100px);
+      transform: translateX(200px);
     }
   }
 
   @keyframes slidingL {
     from {
-      transform: translateX(80px);
+      transform: translateX(400px);
     }
 
     to {
