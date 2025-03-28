@@ -981,11 +981,11 @@ footer .credit a {
 
   @keyframes slidingR {
     from {
-      transform: translateX(-320px);
+      transform: translateX(-180px);
     }
 
     to {
-      transform: translateX(200px);
+      transform: translateX(100px);
     }
   }
 
