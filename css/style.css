@@ -968,18 +968,36 @@ footer .credit a {
   }
 
   .hero .content .judul1 {
-    margin-left: 6rem;
-    animation: slidingR linear;
+    margin-left: 5rem;
+    animation: blurz2 linear;
     animation-timeline: view();
   }
 
   .hero .content .judul2 {
-    margin-left: 12.6rem;
-    animation: slidingL linear;
+    margin-left: 14.6rem;
+    animation: blurz linear;
     animation-timeline: view();
   }
 
-  @keyframes slidingR {
+  @keyframes blurz {
+    50% {
+      filter: blur(0);
+    }
+    100% {
+      filter: blur(6px);
+    }
+  }
+
+  @keyframes blurz2 {
+    60% {
+      filter: blur(0);
+    }
+    100% {
+      filter: blur(6px);
+    }
+  }
+
+  /* @keyframes slidingR {
     from {
       transform: translateX(-180px);
     }
@@ -997,7 +1015,7 @@ footer .credit a {
     to {
       transform: translateX(-300px);
     }
-  }
+  } */
 
   .hero .content .cta {
     display: flex;
