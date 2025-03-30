@@ -922,7 +922,7 @@ footer .credit a {
   }
 
   .hero .content h1 {
-    font-size: 7em;
+    font-size: 5em;
     color: #1c3b2e;
     text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5%);
     line-height: 0.85;
@@ -932,7 +932,7 @@ footer .credit a {
   }
 
   .hero .content p {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 
     margin-top: 3rem;
@@ -950,7 +950,7 @@ footer .credit a {
 
   @keyframes nyempit {
     from {
-      max-width: 55rem;
+      max-width: 40rem;
       padding-left: 0;
     }
 
