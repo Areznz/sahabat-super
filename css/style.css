@@ -913,6 +913,44 @@ footer .credit a {
     object-position: center;
     flex-wrap: wrap;
   }
+
+  .hero .content h1 {
+    font-size: 5em;
+    color: #1c3b2e;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5%);
+    line-height: 0.85;
+    font-family: "Archivo black", sans-serif;
+    animation: blurz2 linear;
+    animation-timeline: view();
+  }
+
+  .hero .content p {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-family: "Archivo black";
+    color: #1c3b2e;
+    background-color: #fff59e;
+    max-width: 30rem;
+    animation: nyempit linear;
+    animation-timeline: view();
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @keyframes nyempit {
+    from {
+      max-width: 40rem;
+      padding-left: 0;
+    }
+
+    to {
+      max-width: 0;
+      padding-left: 2rem;
+    }
+  }
 }
 
 /* Tablet */
@@ -1320,5 +1358,43 @@ footer .credit a {
 @media (max-width: 450px) {
   html {
     font-size: 55%;
+  }
+  .hero .content h1 {
+    font-size: 5em;
+    color: #1c3b2e;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5%);
+    line-height: 0.85;
+    font-family: "Archivo black", sans-serif;
+    animation: blurz2 linear;
+    animation-timeline: view();
+  }
+
+  .hero .content p {
+    font-size: 2rem;
+    text-align: center;
+
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-family: "Archivo black";
+    color: #1c3b2e;
+    background-color: #fff59e;
+    max-width: 30rem;
+    animation: nyempit linear;
+    animation-timeline: view();
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @keyframes nyempit {
+    from {
+      max-width: 40rem;
+      padding-left: 0;
+    }
+
+    to {
+      max-width: 0;
+      padding-left: 2rem;
+    }
   }
 }
